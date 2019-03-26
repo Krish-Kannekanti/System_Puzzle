@@ -14,20 +14,18 @@ def add_item():
     form = ItemForm()
     if form.validate_on_submit():
         item = Items(name=form.name.data, quantity=form.quantity.data, description=form.description.data, date_added=datetime.datetime.now())
-        db_session.add(item)
-        db_session.commit()
+        database.db_session.add(item)
+        database.db_session.commit()
         return redirect(url_for('success'))
     return render_template('index.html', form=form)
 
 @app.route("/success")
 def success():
     results = []
- 
-    qry = db_session.query(Items)
-    results = qry.all()
-
+    qry = database.db_session.query(Items)
+    results = [(item.id, item.name, item.description, str(item.date_added)) for item in qry.all()]
     return str(results)
   
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0')
+    app.run(host='0.0.0.0', port=int("5001"))

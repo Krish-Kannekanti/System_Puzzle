@@ -1,6 +1,16 @@
 import datetime
 import os
 
+from sqlalchemy.exc import OperationalError
+connected = False
+while not connected:
+	try:
+		import database
+		database.init_db()
+		connected = True
+	except OperationalError:
+		continue
+
 from flask import Flask, render_template, redirect, url_for
 from forms import ItemForm
 from models import Items

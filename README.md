@@ -5,7 +5,7 @@
 2. [Introduction](README.md#introduction)
 3. [Puzzle details](README.md#puzzle-details)
 4. [Instructions to submit your solution](README.md#instructions-to-submit-your-solution)
-5. [Solution implemented after changes]()
+5. [Solution implemented after changes](README.md#Solution-implemented-after-changes)
 6. [FAQ](README.md#faq)
 
 # Understanding the puzzle

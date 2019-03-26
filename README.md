@@ -5,7 +5,8 @@
 2. [Introduction](README.md#introduction)
 3. [Puzzle details](README.md#puzzle-details)
 4. [Instructions to submit your solution](README.md#instructions-to-submit-your-solution)
-5. [FAQ](README.md#faq)
+5. [Solution implemented after changes]()
+6. [FAQ](README.md#faq)
 
 # Understanding the puzzle
 
@@ -42,6 +43,17 @@ Once you've corrected the bugs and have the basic features working, commit the f
 * Use the submission box to enter the link to your GitHub repo or Bitbucket ONLY
 * Link to the specific repo for this project, not your general profile
 * Put any comments in the README inside your project repo
+
+# Solution implemented after changes
+
+*	The order of port number in docker-composer.yml file was not proper. Changed it to “8080:80”. This helps the flask app to listen to     the proper port number, 8080, as per the flaskapp.conf.
+*	The path for local folder is incorrect in the given yml file. The syntax has been corrected from “data” to “./data”
+*	In order to handle the system from shutting down when the postgresql doesn’t start “restart:always” has been included
+*	Updated port number in app.py file. In order to do that, port number 5001 has been initialized.
+    App.run(host = ‘0.0.0.0’, port = int(“5001”)). This is done as it was exposed in docker file but not in app.py
+*   In order to db connection related error, try method is implemented at the start of the code. Which is not mandatory but just for         safer coding and understanding	
+
+
 
 # FAQ
 
